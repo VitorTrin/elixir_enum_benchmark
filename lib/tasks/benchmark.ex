@@ -59,10 +59,10 @@ defmodule Mix.Tasks.Benchmark do
       |> Enum.to_list
     end
 
-    Mix.shell.info "10.000 items with Enum that start a task and wait for response"
+    Mix.shell.info "5 items with Enum that start a task and wait for response"
     Mix.shell.info "(compare looping CPU usage to a simple other task)"
     Benchwarmer.benchmark fn -> 
-      1..10000
+      1..5
       |> Enum.map(fn _ -> 
           me = self
           spawn_link fn -> send me, :pingpong end
@@ -72,10 +72,10 @@ defmodule Mix.Tasks.Benchmark do
         end)
     end
 
-    Mix.shell.info "10.000 items with Stream that start a task and wait for response"
+    Mix.shell.info "5 items with Stream that start a task and wait for response"
     Mix.shell.info "(compare looping CPU usage to a simple other task)"
     Benchwarmer.benchmark fn -> 
-      1..10000
+      1..5
       |> Enum.map(fn _ -> 
           me = self
           spawn_link fn -> send me, :pingpong end
