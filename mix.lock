@@ -1,1 +1,1 @@
-%{"benchwarmer": {:hex, :benchwarmer, "0.0.2"}}
+%{"benchfella": {:git, "git://github.com/alco/benchfella.git", "a6db8b28a8b1c620204daed43d49a9fd8b4f1df4", []}}

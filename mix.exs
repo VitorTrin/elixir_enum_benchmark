@@ -6,7 +6,7 @@ defmodule Axl.Mixfile do
      version: "0.0.1",
      elixir: "~> 1.0",
      deps: deps(Mix.env),
-     default_task: "benchmark",
+     default_task: "bench",
     ]
   end
 
@@ -28,7 +28,7 @@ defmodule Axl.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps(_) do
     [
-      {:benchwarmer, "~> 0.0", only: :dev},
+      {:benchfella, github: "alco/benchfella"}
     ]
   end
 end
