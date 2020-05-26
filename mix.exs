@@ -2,11 +2,12 @@ defmodule Axl.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :elixir_enum_benchmark ,
-     version: "0.0.1",
-     elixir: "~> 1.0",
-     deps: deps(Mix.env),
-     default_task: "bench",
+    [
+      app: :elixir_enum_benchmark,
+      version: "0.0.1",
+      elixir: "~> 1.0",
+      deps: deps(Mix.env()),
+      default_task: "bench"
     ]
   end
 
@@ -28,7 +29,8 @@ defmodule Axl.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps(_) do
     [
-      {:benchfella, github: "alco/benchfella"}
+      {:benchfella, github: "alco/benchfella"},
+      {:benchee, "~> 1.0.1"}
     ]
   end
 end
